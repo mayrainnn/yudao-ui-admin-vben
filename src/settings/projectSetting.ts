@@ -50,7 +50,7 @@ const setting: ProjectConfig = {
   // 是否显示logo
   showLogo: true,
   // 是否显示底部信息 copyright
-  showFooter: true,
+  showFooter: false,
   // 头部配置
   headerSetting: {
     // 背景色
@@ -118,7 +118,7 @@ const setting: ProjectConfig = {
     // 刷新后是否保留已经打开的标签页
     cache: false,
     // 开启
-    show: true,
+    show: false,
     // 显示图标
     showIcon: true,
     // 开启快速操作
