@@ -163,6 +163,8 @@ export interface GlobConfig {
   shortName: string
   // 租户开关
   tenantEnable: string
+  // 租户在登录界面是否显示
+  tenantShow: string
   // 验证码开关
   captchaEnable: string
 }
@@ -178,6 +180,8 @@ export interface GlobEnvConfig {
   VITE_GLOB_APP_SHORT_NAME: string
   // 租户开关
   VITE_GLOB_APP_TENANT_ENABLE: string
+  // 租户在登录界面是否显示
+  VITE_GLOB_APP_TENANT_SHOW: string
   // 验证码开关
   VITE_GLOB_APP_CAPTCHA_ENABLE: string
 }

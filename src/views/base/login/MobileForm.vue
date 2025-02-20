@@ -21,7 +21,7 @@ const { t } = useI18n()
 const { prefixCls } = useDesign('login')
 const { createMessage, notification, createErrorModal } = useMessage()
 const { handleBackLogin, getLoginState } = useLoginState()
-const { tenantEnable, captchaEnable } = useGlobSetting()
+const { tenantEnable, tenantShow, captchaEnable } = useGlobSetting()
 const { getFormRules } = useFormRules()
 const userStore = useUserStore()
 const permissionStore = usePermissionStore()
@@ -36,7 +36,7 @@ const verify = ref()
 const captchaType = ref('blockPuzzle') // blockPuzzle 滑块 clickWord 点击文字
 
 const formData = reactive({
-  tenantName: '芋道源码',
+  tenantName: 'mayrain-lab',
   mobile: '',
   mobileCode: '',
   captchaVerification: '',
@@ -118,7 +118,7 @@ async function getSmsCode() {
   <div v-if="getShow">
     <LoginFormTitle class="enter-x" />
     <Form ref="formRef" class="enter-x p-4" :model="formData" :rules="getFormRules">
-      <FormItem name="tenantName" class="enter-x">
+      <FormItem v-if="tenantShow === 'true'" name="tenantName" class="enter-x">
         <Input
           v-if="tenantEnable === 'true'"
           v-model:value="formData.tenantName"

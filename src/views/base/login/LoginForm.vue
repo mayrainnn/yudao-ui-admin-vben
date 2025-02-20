@@ -29,7 +29,7 @@ const { prefixCls } = useDesign('login')
 const userStore = useUserStore()
 const permissionStore = usePermissionStore()
 
-const { tenantEnable, captchaEnable } = useGlobSetting()
+const { tenantEnable, tenantShow, captchaEnable } = useGlobSetting()
 
 const { setLoginState, getLoginState } = useLoginState()
 const { getFormRules } = useFormRules()
@@ -42,9 +42,9 @@ const verify = ref()
 const captchaType = ref('blockPuzzle') // blockPuzzle 滑块 clickWord 点击文字
 
 const formData = reactive({
-  tenantName: '芋道源码',
-  username: 'admin',
-  password: 'admin123',
+  tenantName: 'mayrain-lab',
+  username: '',
+  password: '',
   captchaVerification: '',
 })
 
@@ -124,7 +124,7 @@ async function handleLogin(params) {
     v-show="getShow" ref="formRef" class="enter-x p-4" :model="formData" :rules="getFormRules"
     @keypress.enter="handleLogin"
   >
-    <FormItem name="tenantName" class="enter-x">
+    <FormItem v-if="tenantShow === 'true'" name="tenantName" class="enter-x">
       <Input
         v-if="tenantEnable === 'true'"
         v-model:value="formData.tenantName"

@@ -10,6 +10,7 @@ export function useGlobSetting(): Readonly<GlobConfig> {
     VITE_GLOB_APP_SHORT_NAME,
     VITE_GLOB_API_URL_PREFIX,
     VITE_GLOB_APP_TENANT_ENABLE,
+    VITE_GLOB_APP_TENANT_SHOW,
     VITE_GLOB_APP_CAPTCHA_ENABLE,
   } = getAppEnvConfig()
 
@@ -27,6 +28,7 @@ export function useGlobSetting(): Readonly<GlobConfig> {
     urlPrefix: VITE_GLOB_API_URL_PREFIX,
     uploadUrl: VITE_GLOB_API_URL + '/infra/file/upload',
     tenantEnable: VITE_GLOB_APP_TENANT_ENABLE,
+    tenantShow: VITE_GLOB_APP_TENANT_SHOW,
     captchaEnable: VITE_GLOB_APP_CAPTCHA_ENABLE,
   }
   return glob
