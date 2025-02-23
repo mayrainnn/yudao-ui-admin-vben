@@ -149,10 +149,10 @@ async function handleLogin(params) {
       />
     </FormItem>
 
-    <Row class="enter-x">
+    <!-- <Row class="enter-x">
       <Col :span="12">
         <FormItem>
-          <!-- No logic, you need to deal with it yourself -->
+          No logic, you need to deal with it yourself
           <Checkbox v-model:checked="rememberMe" size="small">
             {{ t('sys.login.rememberMe') }}
           </Checkbox>
@@ -160,23 +160,21 @@ async function handleLogin(params) {
       </Col>
       <Col :span="12">
         <FormItem :style="{ 'text-align': 'right' }">
-          <!-- No logic, you need to deal with it yourself -->
+          No logic, you need to deal with it yourself
           <a-button type="link" size="small" @click="setLoginState(LoginStateEnum.RESET_PASSWORD)">
             {{ t('sys.login.forgetPassword') }}
           </a-button>
         </FormItem>
       </Col>
-    </Row>
+    </Row> -->
 
     <FormItem class="enter-x">
       <a-button type="primary" size="large" block :loading="loading" @click="getCode">
         {{ t('sys.login.loginButton') }}
       </a-button>
-      <!-- <a-button size="large" class="mt-4 enter-x" block @click="handleRegister">
-        {{ t('sys.login.registerButton') }}
-      </a-button> -->
     </FormItem>
-    <Row class="enter-x" :gutter="[16, 16]">
+
+    <!-- <Row class="enter-x" :gutter="[16, 16]">
       <Col :md="8" :xs="24">
         <a-button block @click="setLoginState(LoginStateEnum.MOBILE)">
           {{ t('sys.login.mobileSignInFormTitle') }}
@@ -192,22 +190,22 @@ async function handleLogin(params) {
           {{ t('sys.login.registerButton') }}
         </a-button>
       </Col>
-    </Row>
+    </Row> -->
 
-    <Divider class="enter-x">
+    <!-- <Divider class="enter-x">
       {{ t('sys.login.otherSignIn') }}
-    </Divider>
+    </Divider> -->
 
-    <div class="enter-x flex justify-evenly" :class="`${prefixCls}-sign-in-way`">
+    <!-- <div class="enter-x flex justify-evenly" :class="`${prefixCls}-sign-in-way`">
       <GithubFilled />
       <WechatFilled />
       <AlipayCircleFilled />
-      <!-- <GoogleCircleFilled /> -->
-      <!-- <TwitterCircleFilled /> -->
-    </div>
+      <GoogleCircleFilled />
+      <TwitterCircleFilled />
+    </div> -->
 
     <!-- 萌新必读 -->
-    <Divider class="enter-x">
+    <!-- <Divider class="enter-x">
       萌新必读
     </Divider>
     <div class="enter-x flex justify-evenly" :class="`${prefixCls}-sign-in-way`">
@@ -223,7 +221,7 @@ async function handleLogin(params) {
       <a-button href="http://static.yudao.iocoder.cn/mp/xinyu370.jpeg" target="_blank" class="w-1/4 pl-1">
         🤝外包咨询
       </a-button>
-    </div>
+    </div> -->
   </Form>
   <Verify ref="verify" mode="pop" :captcha-type="captchaType" :img-size="{ width: '360px', height: '180px' }" @success="handleLogin" />
 </template>
